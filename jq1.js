@@ -98,9 +98,29 @@
                 console.log(intersects[0].object);
                 var selected = intersects[0].object;
                 if(selected["type"] == "Mesh" && selected["name"] != ""){
-                    $("#dialog p").html(selected["name"]);
-                    console.log(selected["name"]);
-                    $("#dialog").dialog("open");
+
+                    switch (event.which) {
+                        case 1:
+                            console.log('Left Mouse button pressed.');
+                                       
+                            $("#dialog p").html('<img src="images/case.jpeg" height="225" width="300" alt="">');
+                            console.log(selected["name"]);
+                            $("#dialog").dialog("open");
+                            break;
+                        case 2:
+                            console.log('Middle Mouse button pressed.');
+                            break;
+                        case 3:
+                            console.log('Right Mouse button pressed.');
+                            $("#dialog p").html('<img src="images/stack.jpeg" height="225" width="300" alt="">');
+                            console.log(selected["name"]);
+                            $("#dialog").dialog("open");
+                            break;
+                        default:
+                            console.log('You have a strange Mouse!');
+                    }
+
+
                 }
             }
         }
